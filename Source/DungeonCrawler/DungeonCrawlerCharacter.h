@@ -55,6 +55,9 @@ protected:
 	SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 
+	/****************************************************************************
+	* @brief Manages the multiple actions that are happening
+	*/
 	void 
 	checkAction();
 
@@ -90,9 +93,19 @@ protected:
 	void 
 	roll();
 
+	/****************************************************************************
+	* @brief manages a condition that depends of time
+	*
+	* @param bool& condition, float& time, float& elapsed
+	*/
 	void 
 	iterateCycle(bool& condition, float& time, float& elapsed);
 
+	/****************************************************************************
+	* @brief Obtains the Yaw rotation that the character has
+	*
+	* @return FRotator yawRotation
+	*/
 	FRotator 
 	getYawRotation();
 

@@ -40,13 +40,19 @@ public:
 
 public:
 
+
+  /****************************************************************************
+  * @brief Activates the flag that indicates that the weapon is triggered an can perform damage
+  */
   UFUNCTION(BlueprintCallable) void 
   triggerDamage();
 
 private:
-  void 
-  triggerCollision(bool active);
 
+
+  /****************************************************************************
+  * @brief Checks if the weapon can continue performing damage or not
+  */
   void 
   checkDamageTrigger();
 

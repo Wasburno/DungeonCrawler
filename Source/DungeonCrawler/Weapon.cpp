@@ -33,17 +33,6 @@ void AWeapon::Tick(float DeltaTime)
 void AWeapon::triggerDamage()
 {
 	m_isTriggered = true;
-	triggerCollision(true);
-}
-
-
-void AWeapon::triggerCollision(bool active)
-{
-	//if (nullptr != m_damageCollision) {
-	//	active ?
-	//	m_damageCollision->SetCollisionEnabled(ECollisionEnabled::QueryOnly) :
-	//	m_damageCollision->SetCollisionEnabled(ECollisionEnabled::NoCollision);
-	//}
 }
 
 void AWeapon::checkDamageTrigger()
@@ -51,7 +40,6 @@ void AWeapon::checkDamageTrigger()
 	if (m_isTriggered) {
 		if (m_triggerTimeElapsed >= m_performanceTime) {
 			m_isTriggered = false;
-			triggerCollision(false);
 			m_triggerTimeElapsed = 0.0f;
 		}
 		else {
